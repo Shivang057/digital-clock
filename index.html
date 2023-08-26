@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital watch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="hero">
+    <div class="container">
+        <div class="clock">
+            <span id="hr">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
+    </div>
+   </div>
+
+   <script>
+    let hr = document.getElementById("hr");
+    let sec = document.getElementById("sec");
+    let min = document.getElementById("min");
+
+    setInterval(() => {
+
+        let currenttime = new Date() ;
+
+        hr.innerHTML = (currenttime.getHours() <10?"0":"") + currenttime.getHours();
+        min.innerHTML = (currenttime.getMinutes() <10?"0":"") + currenttime.getMinutes();
+        sec.innerHTML = (currenttime.getSeconds() <10?"0":"") + currenttime.getSeconds();
+
+    } , 1000)
+
+   </script>
+    
+</body>
+</html>
